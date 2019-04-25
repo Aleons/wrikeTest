@@ -21,4 +21,8 @@ public class ButtonGroup {
         buttonGroup.get(index).click();
     }
 
+    public String getUrlHrefByItem(int item){
+        return this.buttonGroup.get(item).findElement(By.xpath(".//a")).getAttribute("href");
+    }
+
 }

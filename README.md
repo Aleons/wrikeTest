@@ -1,3 +1,10 @@
+
+Для запуска теста нужно : перейти в каталог с тестом (в корень там, где pom.xml) через терминал и выполнить команду : mvn clean test site
+тесты будут выполняться в Google Chrome. Путь до драйвера прокладывать не надо.
+ для просмотра allure отчета нужно открыть ./target/site/allure-maven-plugin.html
+
+
+
 Test case scenario:
 
 Open url: wrike.com;  +
@@ -24,5 +31,3 @@ Selector: xpath (should be short and stable)  +
 
 
 
-Для запуска теста нужно : перейти в каталог с тестом (в корень там, где pom.xml) через терминал и выполнить команду : mvn test
-тесты будут выполняться в Google Chrome. Путь до драйвера прокладывать не надо.

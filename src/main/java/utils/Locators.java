@@ -21,6 +21,8 @@ public interface Locators {
         By bttResults = By.xpath("//*[@name=\"survey-form\"]/button");
         By resendEmail = By.xpath("//*[@class=\"wg-grid\"]/div/p[3]/button");
         By surveySuccess = By.xpath("//*[@class=\"survey-success\"]");
+        By again = By.xpath("(//*[@class=\"again\"])[2]");
+        By socialList = By.xpath("//*[@class = \"wg-footer__social-list\"]//li");
 
     }
 

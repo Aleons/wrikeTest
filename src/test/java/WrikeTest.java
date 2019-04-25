@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import ru.yandex.qatools.allure.annotations.Title;
 import steps.MainPageSteps;
 import utils.Tools;
 
@@ -19,21 +20,21 @@ public class WrikeTest {
         driver.manage().window().maximize();
     }
 
+
     @Test
+    @Title("Test case scenario")
     public void firstTest(){
 
         //Arrange
         driver.get("https://www.wrike.com");
         //Act
-        new MainPageSteps(driver).ClickGetStartedForFreeButton()
+        new MainPageSteps(driver).clickGetStartedForFreeButton()
         .fillInTheEmailField(Tools.randomWord(6)+"+wpt@wriketask.qaa")
-        .clickButtonForCreateAccount()
-        .chooseAnyInterestInWrike(Tools.randomNumber(1,2))
-        .chooseAnyMembersUsingInWrike(Tools.randomNumber(1,5))
-        .chooseAnyAboutTeamFollowInWrike(Tools.randomNumber(1,2))
-        .clickButtonForSendResp()
+        .clickButtonForCreateAccount().checkLoadPage()
+        .checkQAndASectionValidateAnswers()
+        .clickButtonForSendRespAndCheckAssertion()
         //assert
-        .assertSendResponse();
+        .checkButtonTwitter();
 
     }
 

@@ -21,14 +21,14 @@ public class Label {
 
     public boolean waitIsVisible(){
         boolean status = false;
-        for(int i = 0; i<5; i++){
+        for(int i = 0; i<7; i++){
             if (label.isDisplayed()==true){
                 status = true;
                 break;
             }
             else {
                 try {
-                    Thread.sleep(900);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

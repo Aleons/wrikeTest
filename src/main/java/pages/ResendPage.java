@@ -15,6 +15,9 @@ public class ResendPage {
     private ButtonGroup teamFollowButtonGroup;
     private Button resultsButton;
     private Label success;
+    private Button resendEmailButton;
+    private Label resendLabel;
+    private ButtonGroup socialButtonGroup;
 
     public ResendPage(WebDriver driver) {
 
@@ -23,6 +26,9 @@ public class ResendPage {
         teamFollowButtonGroup = new ButtonGroup(teamFollow,driver);
         resultsButton = new Button(bttResults, driver);
         success = new Label(surveySuccess,driver);
+        resendEmailButton = new Button(resendEmail,driver);
+        resendLabel = new Label(again,driver);
+        socialButtonGroup = new ButtonGroup(socialList,driver);
     }
 
     public void interestInWrikeButtonGroupSelectAndCLick(int numberItem){
@@ -43,6 +49,18 @@ public class ResendPage {
 
     public boolean getVisibleStatusSuccessSend(){
         return success.waitIsVisible();
+    }
+
+    public void resendEmailButtonClick(){
+        resendEmailButton.click();
+    }
+
+    public boolean getVisibleReSendMailText(){
+        return resendLabel.waitIsVisible();
+    }
+
+    public String getUrlTwitter(){
+        return socialButtonGroup.getUrlHrefByItem(0);
     }
 
 }
